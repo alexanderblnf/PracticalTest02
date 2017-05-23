@@ -48,7 +48,10 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
 
             }
             if (resetButton.equals((Button)view)) {
-                serverThread.stopServer();
+                serverQuery = queryTxt.getText().toString();
+                Log.d(Constants.TAG, "String: " + serverQuery);
+                Log.d(Constants.TAG, serverThread.getSocket() + "");
+                new ClientAsyncTask(serverQuery, serverThread.getSocket()).execute();
             }
 
             if(pollButton.equals((Button)view)) {

@@ -91,6 +91,7 @@ public class ServerThread extends Thread {
                     } else if(queryStr.contains("rst")) {
                         Log.d(Constants.TAG, queryStr);
                         queryStr = queryStr.substring(3);
+                        Log.d(Constants.TAG, queryStr);
                         removeData(queryStr);
                         Log.d(Constants.TAG, "Array: " + getData().toString());
                     }
